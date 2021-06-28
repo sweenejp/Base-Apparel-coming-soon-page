@@ -5,7 +5,6 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
 ## Table of contents
 
 - [Frontend Mentor - Base Apparel coming soon page solution](#frontend-mentor---base-apparel-coming-soon-page-solution)
-  - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
@@ -13,10 +12,7 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
   - [Author](#author)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -36,10 +32,10 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/grid-sass-javascript-mobilefirst-VCTEMEheJ
+- Live Site URL: https://jsweeney-base-apparel-coming-soon-page.netlify.app/
 
-## My process
+## My Process
 
 ### Built with
 
@@ -83,8 +79,6 @@ The most challenging part of this project was creating the styling for the email
   }
 ```
 That was it. I've had trouble with this type of styling in the past. Grid can handle this well with fixed column sizes and using `justify-self`. I find this approach much more intuitive than `position: absolute` and all of that nonsense. 
-
-### Continued development
 
 ## Author
 
