@@ -1,0 +1,207 @@
+@import "reset";
+@import "config";
+
+$form-height: 50px;
+
+body {
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-size: cover;
+}
+
+// fixed footer
+main {
+  min-height: calc(90vh - 30px);
+}
+
+footer {
+  height: 30px;
+  background: $primary-color-1;
+}
+
+.text-secondary {
+  color: $primary-color-1;
+  font-weight: 300;
+}
+
+.logo {
+  height: 20px;
+  padding: 2em;
+  box-sizing: unset;
+}
+
+.hero-container--small {
+  width: 100%;
+  height: 250px;
+  background-image: url(images/hero-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-container--large {
+  width: 100%;
+  height: 400px;
+  background-image: url(images/hero-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+
+// main
+
+.coming-soon {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  &__title {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    max-width: 300px;
+    margin: 1.5em auto 0.5em auto;
+    line-height: 1;
+  }
+
+  &__text {
+    color: $primary-color-1;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 2em;
+  }
+}
+
+.form {
+  padding: 0;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 45px 80px;
+  align-items: center;
+
+  &__email-input {
+    grid-area: 1 / 1 / 2 / 4;
+    width: 100%;
+    height: $form-height;
+    padding-left: 1.5rem;
+    border-radius: 50px;
+    border: 1px solid $primary-color-1;
+    &::placeholder {
+      color: $primary-color-2;
+      font-weight: 600;
+    }
+    &:focus,
+    &--error {
+      outline: none;
+      border: 2px solid $primary-color-2;
+    }
+  }
+
+  &__submit {
+    grid-area: 1 / 3 / 2 / 4; //grid
+    justify-self: center; //grid
+
+    width: $form-height * 1.6;
+    height: $form-height;
+    border-radius: 50px;
+    background-image: $gradient-2;
+    border: none;
+    -webkit-box-shadow: 1px 11px 30px -2px rgba($primary-color-2, 0.3);
+    box-shadow: 1px 11px 30px -2px rgba($primary-color-2, 0.3);
+    cursor: pointer;
+    right: 5%;
+    transition: transform 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      -webkit-box-shadow: 1px 11px 30px -2px rgba($primary-color-2, 0.8);
+      box-shadow: 1px 11px 30px -2px rgba($primary-color-2, 0.8);
+      background-image: none;
+      background-color: lighten($primary-color-2, 18);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $primary-color-2;
+    }
+  }
+
+  &__submit-icon {
+    margin: auto;
+  }
+
+  &__error-icon {
+    grid-area: 1 / 2 / 2 / 3; //grid
+    justify-self: center; //grid
+    visibility: hidden;
+    right: calc(5% + 85px);
+  }
+
+  &__error-message {
+    visibility: hidden;
+    color: $primary-color-2;
+    text-align: left;
+    padding-left: 1.5rem;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.show {
+  visibility: visible;
+}
+
+@media screen and (min-width: 615px) {
+  .hero-container--small {
+    display: none;
+  }
+
+  .hero-container--large {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    display: grid;
+    grid-template-columns: 15% 1fr 15% 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    grid-template-areas:
+      ". header . hero"
+      ". main . hero"
+      ". main . hero"
+      "footer footer footer footer";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .hero-container--large {
+    grid-area: hero;
+    height: 100%;
+  }
+
+  .coming-soon {
+    grid-area: main;
+    text-align: left;
+
+    &__title {
+      margin-left: 0;
+      font-size: 4rem;
+    }
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
